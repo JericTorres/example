@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../CSS/loginsignup.css" />
+  <title>Sign Up - Lakeview School</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <header class="form-header">
+        <img src="../PICTURE/logo.png" alt="School Logo" class="logo">
+        <div>
+          <h1>Lakeview Integrated School</h1>
+          <p>Create an account to get started.</p>
+        </div>
+      </header>
+
+      <main>
+        <!-- Sign Up Form -->
+        <form action="../PHP/signup.php" method="POST" id="signup-form">
+          <div class="form-group">
+            <label for="signup-full_name">Full Name</label>
+            <input type="text" name="full_name" id="signup-full_name" placeholder="Full Name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="signup-email">Email</label>
+            <input type="email" name="email" id="signup-email" placeholder="example@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="signup-password">Password</label>
+            <input type="password" name="password" id="signup-password" placeholder="Password" required>
+          </div>
+
+          <div class="form-group">
+            <label for="signup-phone">Phone Number</label>
+            <input type="text" name="phone" id="signup-phone" placeholder="Phone Number" required>
+          </div>
+
+          <div class="form-group">
+            <label for="signup-dob">Date of Birth</label>
+            <input type="date" name="dob" id="signup-dob" required>
+          </div>
+
+          <button type="submit" name="signup" class="btn">Create Account</button>
+        </form>
+
+        <div class="link">
+          <p>Already have an account? <a href="login.html">Login</a></p>
+        </div>
+      </main>
+
+      <footer>
+        <p id="designer">By Capstone Members</p>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
