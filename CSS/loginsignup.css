@@ -1,0 +1,194 @@
+/* Reset default padding, margin, and box-sizing */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Background for the body with center alignment */
+body {
+  background-image: url('https://i.pinimg.com/564x/5c/f2/66/5cf2660af5f4214def7166dc7a7c8062.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Main container styling */
+.container {
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  padding: 40px;
+  width: 35%;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect for the container */
+.container:hover {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Form header */
+.form-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  text-align: center;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3); /* Apply slight shadow to entire header */
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+/* 3D text effect for the "Lakeview Integrated School" title */
+.form-header h1 {
+  font-size: 2rem; /* Make the text slightly bigger */
+  font-weight: 600;
+  margin: 0;
+  color: #fff;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6), -1px -1px 2px rgba(0, 0, 0, 0.3); /* 3D shadow effect */
+}
+
+.form-header p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  font-weight: 300;
+}
+
+/* Label styling */
+label {
+  margin: 10px 0 5px;
+  font-size: 1rem;
+  display: block;
+  font-weight: 500;
+}
+
+/* Input and select field styling */
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+  background-color: #f4f4f4;
+  color: #333;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Focus effect for input and select fields */
+input:focus,
+select:focus {
+  background-color: #e0e7ff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(56, 133, 255, 0.8);
+}
+
+input::placeholder {
+  color: #888;
+}
+
+/* Form structure */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Button container - Centering the button */
+#button {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+/* Button styling */
+button {
+  width: 100%;  /* Adjust width to be 50% of the container */
+  padding: 12px;
+  font-size: 1.1rem;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #2980b9, #2c3e50); /* Black to Blue Gradient */
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+  text-align: center; /* Ensure text is centered */
+}
+
+/* Button hover effect */
+button:hover {
+  background: linear-gradient(135deg, #1c5980, #34495e); /* Darker gradient on hover */
+  transform: scale(1.05);  /* Slight zoom effect on hover */
+}
+
+/* Button active effect */
+button:active {
+  background: linear-gradient(135deg, #1c5980, #2c3e50); /* Same as hover on click */
+  transform: scale(1);  /* Reset scale */
+}
+
+/* Disabled button styling */
+button:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+}
+
+/* Footer designer text */
+#designer {
+  color: #ccc;
+  font-family: cursive;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+/* Links for Login / Sign-up */
+.link {
+  text-align: center;
+}
+
+.link p {
+  font-size: 0.95rem;
+}
+
+.link a {
+  color: #74b9ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.link a:hover {
+  text-decoration: underline;
+}
+
+/* Media Queries for Responsiveness */
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .form-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  button {
+    width: 100%;
+  }
+}
