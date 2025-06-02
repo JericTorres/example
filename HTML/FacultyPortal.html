@@ -5,38 +5,45 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../CSS/loginsignup.css" />
-  <title>Login - Lakeview School</title>
+  <title>Faculty Portal - Lakeview School</title>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Google reCAPTCHA Script -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
   <div class="container">
     <div class="content">
       <header class="form-header">
-        <img src="../PICTURE/logo.png" alt="School Logo" class="logo">
+        <img src="../PICTURE/logo.png" alt="Lakeview School Logo" class="logo">
         <div>
           <h1>Lakeview Integrated School</h1>
-          <p>Please log in to continue.</p>
+          <p>Faculty Portal Login</p>
         </div>
       </header>
 
       <main>
-        <!-- Login Form -->
-        <form action="../PHP/login.php" method="POST" id="login-form">
+        <!-- Faculty Login Form -->
+        <form action="../PHP/faculty-login.php" method="POST" id="faculty-login-form">
           <div class="form-group">
-            <label for="login-email">Email</label>
-            <input type="email" name="email" id="login-email" placeholder="example@example.com" required>
+            <label for="faculty-email">Email</label>
+            <input type="email" name="email" id="faculty-email" placeholder="example@lakeview.edu" required>
           </div>
 
           <div class="form-group">
-            <label for="login-password">Password</label>
-            <input type="password" name="password" id="login-password" placeholder="Password" required>
+            <label for="faculty-password">Password</label>
+            <input type="password" name="password" id="faculty-password" placeholder="Password" required>
+          </div>
+
+          <!-- Google reCAPTCHA -->
+          <div class="form-group">
+            <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY_HERE"></div>
           </div>
 
           <button type="submit" name="login" class="btn">Login</button>
         </form>
 
         <div class="link">
-          <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+          <p>Don't have an account? <a href="faculty-signup.html">Sign Up</a></p>
           <p><a href="forgot-password.html">Forgot Password?</a></p>
         </div>
       </main>
@@ -55,12 +62,12 @@
     if (success === 'true') {
       Swal.fire({
         title: 'Registration Successful!',
-        text: 'Your account has been successfully created. Please login.',
+        text: 'Your faculty account has been successfully created. Please login.',
         icon: 'success',
         confirmButtonText: 'OK'
       }).then((result) => {
         if (result.isConfirmed) {
-          window.location.href = 'login.html';
+          window.location.href = 'faculty-login.html';
         }
       });
     }

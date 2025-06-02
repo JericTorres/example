@@ -5,39 +5,49 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../CSS/loginsignup.css" />
-  <title>Login - Lakeview School</title>
+  <title>Login - Lakeview School Student Portal</title>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Google reCAPTCHA Script -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
   <div class="container">
     <div class="content">
       <header class="form-header">
-        <img src="../PICTURE/logo.png" alt="School Logo" class="logo">
+        <img src="../PICTURE/logo.png" alt="Lakeview School Logo" class="logo">
         <div>
           <h1>Lakeview Integrated School</h1>
-          <p>Please log in to continue.</p>
+          <p>Student Portal Login</p>
         </div>
       </header>
 
       <main>
-        <!-- Login Form -->
+        <!-- Student Login Form -->
         <form action="../PHP/login.php" method="POST" id="login-form">
+          <!-- Student Number Field -->
           <div class="form-group">
-            <label for="login-email">Email</label>
-            <input type="email" name="email" id="login-email" placeholder="example@example.com" required>
+            <label for="student-number">Student Number</label>
+            <input type="text" name="student_number" id="student-number" placeholder="Student Number" required>
           </div>
 
+          <!-- PIN Field -->
           <div class="form-group">
-            <label for="login-password">Password</label>
-            <input type="password" name="password" id="login-password" placeholder="Password" required>
+            <label for="pin">PIN</label>
+            <input type="password" name="pin" id="pin" placeholder="PIN" required>
+          </div>
+
+          <!-- reCAPTCHA -->
+          <div class="form-group">
+            <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY_HERE"></div>
           </div>
 
           <button type="submit" name="login" class="btn">Login</button>
         </form>
 
+        <!-- Forgot PIN and Account Activation Support Links -->
         <div class="link">
-          <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
-          <p><a href="forgot-password.html">Forgot Password?</a></p>
+          <p><a href="forgot-pin.html">Forgot your PIN?</a></p>
+          <p>If you forgot your PIN or need assistance to activate your account, please email us at <a href="mailto:support@lakeview.edu.ph">support@lakeviewintegrated.edu.ph</a> using your official IE account. We will only entertain messages coming from LIS official IE.</p>
         </div>
       </main>
 

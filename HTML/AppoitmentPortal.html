@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../CSS/loginsignup.css" />
+  <title>Job Application Portal - Lakeview School</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <header class="form-header">
+        <img src="../PICTURE/logo.png" alt="School Logo" class="logo">
+        <div>
+          <h1>Lakeview Integrated School</h1>
+          <p>Please apply for your appointment or interview</p>
+        </div>
+      </header>
+
+      <main>
+        <!-- Job Application Form -->
+        <form action="../PHP/apply.php" method="POST" id="apply-form" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="applicant-name">Full Name</label>
+            <input type="text" name="name" id="applicant-name" placeholder="Your Full Name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="applicant-email">Email</label>
+            <input type="email" name="email" id="applicant-email" placeholder="applicant@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="applicant-phone">Phone Number</label>
+            <input type="tel" name="phone" id="applicant-phone" placeholder="Your Phone Number" required>
+          </div>
+
+          <div class="form-group">
+            <label for="position">Position Applied For</label>
+            <select name="position" id="position" required>
+              <option value="" disabled selected>Select Position</option>
+              <option value="teacher">Teacher</option>
+              <option value="nurse">Nurse</option>
+              <option value="guard">Guard</option>
+              <option value="janitor">Janitor</option>
+              <option value="administrator">Administrator</option>
+              <option value="accountant">Accountant</option>
+              <option value="librarian">Librarian</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="cover-letter">Cover Letter (Optional)</label>
+            <textarea name="cover_letter" id="cover-letter" placeholder="Write a short cover letter" rows="4"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="resume">Upload Your Resume (PDF, DOCX)</label>
+            <input type="file" name="resume" id="resume" accept=".pdf, .docx" required>
+          </div>
+
+          <button type="submit" name="apply" class="btn">Apply Now</button>
+        </form>
+
+        <!-- Additional Links -->
+        <div class="link">
+          <p>If you have any issues with your application, please contact us at <a href="mailto:support@company.com">support@company.com</a></p>
+        </div>
+      </main>
+
+      <footer>
+        <p id="designer">By Capstone Members</p>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    // Check if 'success' is in the URL to show application success
+    const urlParams = new URLSearchParams(window.location.search);
+    const success = urlParams.get('success');
+
+    if (success === 'true') {
+      Swal.fire({
+        title: 'Application Submitted!',
+        text: 'Your application has been successfully submitted. We will contact you shortly.',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = 'application-success.html'; // Redirect to a success page or keep it on the same page
+        }
+      });
+    }
+  </script>
+</body>
+</html>

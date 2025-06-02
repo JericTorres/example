@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../CSS/admission.css" />
+  <title>Lakeview School Registration</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <header class="form-header">
+        <img src="../PICTURE/logo.png" alt="School Logo" class="logo">
+        <div>
+          <h1>Lakeview Integrated School</h1>
+          <p>
+            School admission forms are processed within 48 hours.<br />
+            You will receive a confirmation message after processing. Please fill all fields.
+          </p>
+        </div>
+      </header>
+
+      <main>
+        <form action="../PHP/registration.php" method="POST" id="registrationForm">
+          <label for="full_name">Full Name</label>
+          <input type="text" name="full_name" id="full_name" placeholder="Full Name" required>
+
+          <!-- Email -->
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" placeholder="example@example.com" required>
+
+          <!-- Phone -->
+          <label for="phone">Phone Number</label>
+          <input type="text" name="phone" id="phone" placeholder="Phone Number" required>
+
+          <!-- Date of Birth -->
+          <label for="dob">Date of Birth</label>
+          <input type="date" name="dob" id="dob" required>
+
+          <!-- Grade Level -->
+          <label for="grade_level">Grade Level</label>
+          <select name="grade_level" id="grade_level" required>
+            <option value="">-- Select Grade --</option>
+            <option value="Grade 1">Grade 1</option>
+            <option value="Grade 2">Grade 2</option>
+            <option value="Grade 3">Grade 3</option>
+            <option value="Grade 4">Grade 4</option>
+            <option value="Grade 5">Grade 5</option>
+            <option value="Grade 6">Grade 6</option>
+            <option value="Grade 7">Grade 7</option>
+            <option value="Grade 8">Grade 8</option>
+            <option value="Grade 9">Grade 9</option>
+            <option value="Grade 10">Grade 10</option>
+            <option value="Grade 11/12">Grade 11/12</option>
+          </select>
+
+          <!-- Strand Section (for Grade 11/12) -->
+          <div id="strand-section" style="display: none;">
+            <label for="strand">Choose a Strand</label>
+            <select name="strand" id="strand">
+              <option value="">-- Select Strand --</option>
+              <option value="STEM">STEM</option>
+              <option value="ABM">ABM</option>
+              <option value="HUMSS">HUMSS</option>
+              <option value="GAS">GAS</option>
+              <option value="TVL">TVL</option>
+            </select>
+          </div>
+
+          <!-- Submit -->
+          <div id="button">
+            <button type="submit" name="signup">Submit Form</button>
+          </div>
+        </form>
+      </main>
+
+      <footer>
+        <p id="designer">By Capstone Member's</p>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    const gradeSelect = document.getElementById('grade_level');
+    const strandSection = document.getElementById('strand-section');
+
+    // Toggle Strand Section based on Grade Level selection
+    gradeSelect.addEventListener('change', function () {
+      if (this.value === 'Grade 11/12') {
+        strandSection.style.display = 'block';  // Show strand section
+      } else {
+        strandSection.style.display = 'none';   // Hide strand section
+      }
+    });
+
+    // Check if 'success' is in the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const success = urlParams.get('success');
+
+    // If the registration is successful, show SweetAlert
+    if (success === 'true') {
+      Swal.fire({
+        title: 'Registration Successful!',
+        text: 'Your registration form has been successfully submitted. Please check your email for further instructions.',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // Redirect to index.html after the user confirms
+          window.location.href = 'index.html';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
