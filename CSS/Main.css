@@ -86,9 +86,6 @@ header .navbar-brand .brand-name:hover {
   color: white !important;
   text-decoration: none;
   font-weight: bold;
-  text-shadow: 2px 2px 4px rgba(0, 0, 255, 0.5);
-  background-image: linear-gradient(to bottom right, #0000ff, #ffffff);
-  -webkit-background-clip: text;
   color: transparent;
   position: relative;
   transition: all 0.3s ease;
@@ -265,7 +262,7 @@ footer {
     left: 0;
     width: 250px;
     background-color: #007bff; /* Change background to blue */
-    padding: 10px;
+    padding: 50px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -361,7 +358,6 @@ footer {
   cursor: pointer;
 }
 
-/* User and AI message styling */
 .user-message {
   background-color: #000000;
   padding: 8px;
