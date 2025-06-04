@@ -72,5 +72,16 @@ function initializeChatbot() {
     }
 }
 
+// Get the header and listen for scroll events
+window.addEventListener('scroll', function () {
+   const header = document.querySelector('header');
+   if (window.scrollY > 50) {  // You can adjust this threshold
+      header.classList.add('scrolled');
+   } else {
+      header.classList.remove('scrolled');
+   }
+});
+
+
 // Start when page is ready
 document.addEventListener("DOMContentLoaded", initializeChatbot);
