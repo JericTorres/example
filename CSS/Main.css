@@ -123,6 +123,68 @@ header .navbar-brand .brand-name:hover {
   overflow: hidden;
 }
 
+/* Centered text on the video */
+.centered-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  /* Ensures perfect centering */
+  color: white;  /* Fallback color in case gradient fails */
+  font-size: 4rem;  /* Adjust font size */
+  font-weight: 700;  /* Bold font */
+  font-family: 'Montserrat', sans-serif;  /* Modern font */
+  text-align: center;
+  letter-spacing: 2px;  /* Slight space between letters for elegance */
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);  /* Semi-transparent background to enhance text visibility */
+  border-radius: 10px;  /* Rounded corners */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);  /* Soft shadow around the text */
+  transition: transform 0.3s ease-in-out, color 0.5s ease-in-out;  /* Smooth transition effect */
+  background-clip: text;  /* Makes the background gradient appear as text color */
+  -webkit-background-clip: text;  /* For Safari compatibility */
+  animation: textColorChange 5s infinite alternate;  /* Animation for text color */
+}
+
+/* Gradient text */
+.centered-text h1 {
+  font-size: 4rem;  /* Large text for the heading */
+  letter-spacing: 2px;  /* Increase letter spacing */
+  background: linear-gradient(45deg, #ff7e5f, #feb47b, #6a11cb, #2575fc);  /* Gradient from pink to blue */
+  -webkit-background-clip: text;  /* Apply gradient to text */
+  background-clip: text;  /* Apply gradient to text */
+}
+
+/* Hover effect for scaling */
+.centered-text:hover {
+  transform: translate(-50%, -50%) scale(1.05);  /* Slight zoom effect on hover */
+}
+
+/* Keyframe animation for color change */
+@keyframes textColorChange {
+  0% {
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+  }
+  25% {
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+  }
+  50% {
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+  }
+  75% {
+    background: linear-gradient(45deg, #ff0080, #ff8c00);
+  }
+  100% {
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+  }
+}
+
+@media (max-width: 768px) {
+  .centered-text h1 {
+    font-size: 3rem;  /* Smaller text for mobile devices */
+  }
+}
+
+
 /* 3D effect on Banner Video */
 #bg-video {
   object-fit: cover;
